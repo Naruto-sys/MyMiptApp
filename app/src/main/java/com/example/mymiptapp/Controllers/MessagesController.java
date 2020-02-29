@@ -31,21 +31,24 @@ public class MessagesController extends Controller {
                 item -> {
                     switch (item.getItemId()) {
                         case R.id.action_messages:
-                            getRouter().pushController(RouterTransaction.with(new MessagesController())
-                                    .popChangeHandler(new FadeChangeHandler())
-                                    .pushChangeHandler(new FadeChangeHandler()));
                             return true;
                         case R.id.action_tasks:
+                            getRouter().pushController(RouterTransaction.with(new TasksController())
+                                    .popChangeHandler(new FadeChangeHandler())
+                                    .pushChangeHandler(new FadeChangeHandler()));
+                            getRouter().popController(this);
                             return true;
                         case R.id.action_clock:
                             getRouter().pushController(RouterTransaction.with(new ScheduleController())
                                     .popChangeHandler(new FadeChangeHandler())
                                     .pushChangeHandler(new FadeChangeHandler()));
+                            getRouter().popController(this);
                             return true;
                         case R.id.action_login:
                             getRouter().pushController(RouterTransaction.with(new LoginController())
                                     .popChangeHandler(new FadeChangeHandler())
                                     .pushChangeHandler(new FadeChangeHandler()));
+                            getRouter().popController(this);
                             return true;
                     }
                     return false;
