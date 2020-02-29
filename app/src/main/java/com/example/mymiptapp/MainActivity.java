@@ -9,6 +9,7 @@ import com.bluelinelabs.conductor.Conductor;
 import com.bluelinelabs.conductor.Router;
 import com.bluelinelabs.conductor.RouterTransaction;
 import com.example.mymiptapp.Controllers.AuthController;
+import com.example.mymiptapp.Controllers.LoginController;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity{
 
         router = Conductor.attachRouter(this, container, savedInstanceState);
         if (!router.hasRootController()) {
-            router.setRoot(RouterTransaction.with(new AuthController()));
+            router.setRoot(RouterTransaction.with(new LoginController()));
         }
     }
 

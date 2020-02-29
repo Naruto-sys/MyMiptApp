@@ -72,4 +72,5 @@ dependencies {
     implementation "com.bluelinelabs:conductor-rxlifecycle2:$conductor_version"
     implementation "com.bluelinelabs:conductor-autodispose:$conductor_version"
     implementation "com.bluelinelabs:conductor-archlifecycle:$conductor_version"
+    implementation 'com.android.support:design:28.0.0'
 }

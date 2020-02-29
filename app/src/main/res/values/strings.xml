@@ -1,15 +1,34 @@
 <resources>
-    <string name="app_name">NeoBrain</string>
+    <string name="app_name">Мой ФизТех</string>
     <string name="auth">Авторизация</string>
     <string name="hint_username">Эл. почта</string>
     <string name="hint_password">Пароль</string>
     <string name="entry">Войти</string>
     <string name="reg">Регистрация</string>
     <string name="reg2">Зарегистрироваться</string>
-    <string name="hint_name">Имя</string>
-    <string name="hint_surname">Фамилия</string>
+    <string name="name_surname">Мария Жукова</string>
     <string name="hint_nickname">Никнейм</string>
     <string name="hint_password_repeat">Повторение пароля</string>
     <string name="hint_number">Номер телефона</string>
     <string name="password_forget">Забыли пароль?</string>
+    <string name="my_account">Мой аккаунт</string>
+    <string name="group_text">Группа: 825</string>
+    <string name="email">Rogozheva.AM@phystech.edu</string>
+    <string name="your_notes">Твои заметки</string>
+    <string name="plus">Добавить заметку</string>
+    <string name="add_title">Задача</string>
+    <string name="save_btn">Сохранить</string>
+    <string name="del_btn">Удалить</string>
+    <string name="modif_btn">Изменить</string>
+    <string name="modif_title">Изменить задачу</string>
+    <string name="completed">Выполнено</string>
+    <string name="waiting">Ожидание</string>
+    <string name="task">Задача</string>
+    <string name="detail">Детали</string>
+    <string name="deadline">Дата выполнения</string>
+    <string name="done">Сделано!</string>
+    <string name="required">Необходимо заполнить!</string>
+    <string name="sure">Вы уверены?</string>
+    <string name="ok">Да</string>
+    <string name="cancel">Отмена</string>
 </resources>
