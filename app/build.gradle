@@ -31,13 +31,17 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     // Firebase
-    implementation 'com.google.firebase:firebase-auth:9.4.0'
-    implementation 'com.google.firebase:firebase-database:9.4.0'
+    def base_version = "9.2.0"
+    implementation "com.google.firebase:firebase-core:$base_version"
+    implementation "com.google.firebase:firebase-auth:$base_version"
+    implementation "com.google.firebase:firebase-messaging:$base_version"
+
     // Swipe Refresh Layout
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 
     //Google play service
-    implementation 'com.google.android.gms:play-services-ads:18.3.0'
+    implementation 'com.google.android.gms:play-services-ads:9.2.0'
+    implementation 'com.google.android.gms:play-services-location:9.2.0'
 
     // CardView
     implementation 'androidx.core:core-ktx:1.2.0'

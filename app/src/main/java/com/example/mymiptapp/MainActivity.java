@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity{
 
         router = Conductor.attachRouter(this, container, savedInstanceState);
         if (!router.hasRootController()) {
-            router.setRoot(RouterTransaction.with(new BlockController()));
+            router.setRoot(RouterTransaction.with(new AuthController()));
         }
     }
 
