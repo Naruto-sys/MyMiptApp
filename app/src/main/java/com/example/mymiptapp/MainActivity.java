@@ -10,6 +10,7 @@ import com.bluelinelabs.conductor.Router;
 import com.bluelinelabs.conductor.RouterTransaction;
 import com.example.mymiptapp.Controllers.AuthController;
 import com.example.mymiptapp.Controllers.BlockController;
+import com.example.mymiptapp.Controllers.LoginController;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

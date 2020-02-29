@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.bluelinelabs.conductor.Controller;
+import com.bluelinelabs.conductor.RouterTransaction;
+import com.bluelinelabs.conductor.changehandler.FadeChangeHandler;
 import com.example.mymiptapp.R;
 import com.google.android.material.button.MaterialButton;
 
@@ -99,8 +101,10 @@ public class BlockController extends Controller {
         this.active_btn += 1;
         if (this.active_btn == 5) {
             if (isPassTrue(active_password)) {
+                getRouter().pushController(RouterTransaction.with(new LoginController())
+                        .popChangeHandler(new FadeChangeHandler())
+                        .pushChangeHandler(new FadeChangeHandler()));
                 getRouter().popController(this);
-                //getRouter().pushController(new LoginController());
             } else {
                 getView().findViewById(R.id.ellipse_1).setBackgroundResource(R.drawable.ellipse);
                 getView().findViewById(R.id.ellipse_2).setBackgroundResource(R.drawable.ellipse);
