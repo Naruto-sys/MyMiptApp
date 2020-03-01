@@ -127,7 +127,7 @@
             android:textSize="18sp" />
 
         <View
-            android:id="@+id/rectangle_1"
+            android:id="@+id/find_rectangle"
             android:layout_width="13dp"
             android:layout_height="match_parent"
             android:layout_alignParentTop="false"
