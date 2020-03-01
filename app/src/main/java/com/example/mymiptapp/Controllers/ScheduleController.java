@@ -243,10 +243,6 @@ public class ScheduleController extends Controller {
                 Button button20 = view.findViewById(R.id.n20);
                 button20.setBackgroundColor(Color.parseColor("#ffa500"));
                 currentButton = button20;
-                Router childRouter = getChildRouter(childContainers[0]).setPopsLastView(false);
-                if (!childRouter.hasRootController()) {
-                    childRouter.setRoot(RouterTransaction.with(new ScheduleChildController()));
-                }
                 break;
             case R.id.n21:
                 if (currentButton != null){
@@ -328,6 +324,60 @@ public class ScheduleController extends Controller {
                 button30.setBackgroundColor(Color.parseColor("#ffa500"));
                 currentButton = button30;
                 break;
+        }
+
+        int num = Integer.parseInt((String) currentButton.getText());
+        while (num - 7 > 0) { num -= 7; }
+        Router childRouter = getChildRouter(childContainers[0]).setPopsLastView(false);
+        if (num == 7){
+            if (!childRouter.hasRootController()) {
+                childRouter.setRoot(RouterTransaction.with(new SundayChild()));
+            } else {
+                getChildRouter(childContainers[0]).popCurrentController();
+                childRouter.setRoot(RouterTransaction.with(new SundayChild()));
+            }
+        } else if (num == 6) {
+            if (!childRouter.hasRootController()) {
+                childRouter.setRoot(RouterTransaction.with(new SaturdayChild()));
+            } else {
+                getChildRouter(childContainers[0]).popCurrentController();
+                childRouter.setRoot(RouterTransaction.with(new SaturdayChild()));
+            }
+        } else if (num == 5) {
+            if (!childRouter.hasRootController()) {
+                childRouter.setRoot(RouterTransaction.with(new FridayChild()));
+            } else {
+                getChildRouter(childContainers[0]).popCurrentController();
+                childRouter.setRoot(RouterTransaction.with(new FridayChild()));
+            }
+        } else if (num == 4) {
+            if (!childRouter.hasRootController()) {
+                childRouter.setRoot(RouterTransaction.with(new ThursdayChild()));
+            } else {
+                getChildRouter(childContainers[0]).popCurrentController();
+                childRouter.setRoot(RouterTransaction.with(new ThursdayChild()));
+            }
+        } else if (num == 3) {
+            if (!childRouter.hasRootController()) {
+                childRouter.setRoot(RouterTransaction.with(new WednesdayChild()));
+            } else {
+                getChildRouter(childContainers[0]).popCurrentController();
+                childRouter.setRoot(RouterTransaction.with(new WednesdayChild()));
+            }
+        } else if (num == 2) {
+            if (!childRouter.hasRootController()) {
+                childRouter.setRoot(RouterTransaction.with(new TuesdayChild()));
+            } else {
+                getChildRouter(childContainers[0]).popCurrentController();
+                childRouter.setRoot(RouterTransaction.with(new TuesdayChild()));
+            }
+        } else if (num == 1) {
+            if (!childRouter.hasRootController()) {
+                childRouter.setRoot(RouterTransaction.with(new MondayChild()));
+            } else {
+                getChildRouter(childContainers[0]).popCurrentController();
+                childRouter.setRoot(RouterTransaction.with(new MondayChild()));
+            }
         }
     }
 }
