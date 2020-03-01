@@ -43,4 +43,11 @@
     <string name="n_8">8</string>
     <string name="n_9">9</string>
     <string name="exit">Выйти</string>
+    <string name="Mo">Пн</string>
+    <string name="Tu">Вт</string>
+    <string name="We">Ср</string>
+    <string name="Th">Чт</string>
+    <string name="Fr">Пт</string>
+    <string name="Sa">Сб</string>
+    <string name="Su">Вс</string>
 </resources>
