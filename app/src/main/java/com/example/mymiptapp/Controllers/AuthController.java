@@ -69,21 +69,14 @@ public class AuthController extends Controller {
     }
 
     @OnClick({R.id.authButton}) void launchAuth() {
-        String log = "";
-        String pas = "";
         try {
-            log = ((EditText) getView().findViewById(R.id.login)).getText().toString();
-            pas = ((EditText) getView().findViewById(R.id.password)).getText().toString();
-            Thread.sleep(200);
+            String log = ((EditText) getView().findViewById(R.id.login)).getText().toString();
+            String pas = ((EditText) getView().findViewById(R.id.password)).getText().toString();
             FirebaseAuth auth = FirebaseAuth.getInstance();
-            Thread.sleep(200);
             auth.signInWithEmailAndPassword(log, pas).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
                     flag = true;
-                    // String userId = authResult.getUser().getUid();
-                    // Toast.makeText(getApplicationContext(), userId, Toast.LENGTH_LONG).show();
-
                 }
             });
             if (flag) {
