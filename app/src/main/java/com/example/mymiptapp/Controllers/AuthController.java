@@ -42,6 +42,7 @@ public class AuthController extends Controller {
     private boolean flag = false;
     private static final String MY_SETTINGS = "my_settings";
     SharedPreferences sp;
+    private FirebaseAuth mAuth;
 
 
     @NonNull
@@ -73,7 +74,9 @@ public class AuthController extends Controller {
         try {
             log = ((EditText) getView().findViewById(R.id.login)).getText().toString();
             pas = ((EditText) getView().findViewById(R.id.password)).getText().toString();
+            Thread.sleep(200);
             FirebaseAuth auth = FirebaseAuth.getInstance();
+            Thread.sleep(200);
             auth.signInWithEmailAndPassword(log, pas).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
