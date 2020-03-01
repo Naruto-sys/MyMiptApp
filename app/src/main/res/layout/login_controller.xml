@@ -136,12 +136,11 @@
                 android:layout_alignParentTop="false"
                 android:layout_alignParentEnd="false"
                 android:layout_alignParentBottom="false"
+                android:layout_marginStart="20dp"
                 android:gravity="center_horizontal|top"
                 android:text="@string/email"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.508"
                 app:layout_constraintStart_toEndOf="@+id/subject_card1"
                 app:layout_constraintTop_toBottomOf="@+id/group" />
 

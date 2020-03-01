@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import com.bluelinelabs.conductor.changehandler.FadeChangeHandler;
 import com.example.mymiptapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -30,6 +32,8 @@ public class LoginController extends Controller {
     protected View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container) {
         View view = inflater.inflate(R.layout.login_controller, container, false);
         ButterKnife.bind(this, view);
+        TextView login = (TextView) view.findViewById(R.id.email);
+        login.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
         BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_login);
