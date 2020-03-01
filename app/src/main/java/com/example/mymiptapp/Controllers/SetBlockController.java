@@ -1,43 +1,37 @@
 package com.example.mymiptapp.Controllers;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 
 import com.bluelinelabs.conductor.Controller;
 import com.bluelinelabs.conductor.RouterTransaction;
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler;
 import com.example.mymiptapp.R;
-import com.google.android.material.button.MaterialButton;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class BlockController extends Controller {
-
+public class SetBlockController extends Controller {
     private static final String MY_SETTINGS = "my_settings";
     SharedPreferences sp;
-    public String active_password = "";
     public View active_view;
     public int active_btn = 1;
+    public String active_password = "";
 
     @NonNull
     @Override
     protected View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container) {
-        View view = inflater.inflate(R.layout.block_controller, container, false);
-        ButterKnife.bind(this, view);
         sp = getApplicationContext().getSharedPreferences(MY_SETTINGS,
                 Context.MODE_PRIVATE);
+        String hasVisited = sp.getString("PIN", "");
+        View view = inflater.inflate(R.layout.set_block_controller, container, false);
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -103,21 +97,13 @@ public class BlockController extends Controller {
 
         this.active_btn += 1;
         if (this.active_btn == 5) {
-            if (isPassTrue(active_password)) {
-                getRouter().pushController(RouterTransaction.with(new LoginController())
-                        .popChangeHandler(new FadeChangeHandler())
-                        .pushChangeHandler(new FadeChangeHandler()));
-                getRouter().popController(this);
-            } else {
-                getView().findViewById(R.id.ellipse_1).setBackgroundResource(R.drawable.ellipse);
-                getView().findViewById(R.id.ellipse_2).setBackgroundResource(R.drawable.ellipse);
-                getView().findViewById(R.id.ellipse_3).setBackgroundResource(R.drawable.ellipse);
-                getView().findViewById(R.id.ellipse_4).setBackgroundResource(R.drawable.ellipse);
-                active_password = "";
-                active_btn = 1;
-                ImageButton canc = (ImageButton) getView().findViewById(R.id.face_id_btn);
-                canc.setImageResource(R.drawable.face_id);
-            }
+            SharedPreferences.Editor e = sp.edit();
+            e.putString("PIN", active_password);
+            e.commit();
+            getRouter().pushController(RouterTransaction.with(new LoginController())
+                    .popChangeHandler(new FadeChangeHandler())
+                    .pushChangeHandler(new FadeChangeHandler()));
+            getRouter().popController(this);
         }
     }
 
@@ -144,12 +130,5 @@ public class BlockController extends Controller {
                 cancel.setImageResource(R.drawable.face_id);
             }
         }
-    }
-
-    private boolean isPassTrue(String pass) {
-        if (pass.equals(sp.getString("PIN", ""))) {
-            return true;
-        }
-        return false;
     }
 }

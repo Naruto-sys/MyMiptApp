@@ -51,10 +51,9 @@ public class AuthController extends Controller {
         sp = getApplicationContext().getSharedPreferences(MY_SETTINGS,
                 Context.MODE_PRIVATE);
         boolean hasVisited = sp.getBoolean("hasAuthed", false);
-
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if (hasVisited) {
-            getRouter().pushController(RouterTransaction.with(new LoginController())
+            getRouter().pushController(RouterTransaction.with(new BlockController())
                     .popChangeHandler(new FadeChangeHandler())
                     .pushChangeHandler(new FadeChangeHandler()));
             getRouter().popController(this);
@@ -85,21 +84,16 @@ public class AuthController extends Controller {
                 }
             });
             if (flag) {
-                boolean authed = sp.getBoolean("hasAuthed", false);
-
-                getRouter().pushController(RouterTransaction.with(new LoginController())
+                flag = false;
+                Editor e = sp.edit();
+                e.putBoolean("hasAuthed", true);
+                e.commit();
+                getRouter().pushController(RouterTransaction.with(new SetBlockController())
                         .popChangeHandler(new FadeChangeHandler())
                         .pushChangeHandler(new FadeChangeHandler()));
                 getRouter().popController(this);
-                flag = false;
-                if (!authed) {
-                    Editor e = sp.edit();
-                    e.putBoolean("hasAuthed", true);
-                    e.commit();
-                }
             } else {
-
-                Toast.makeText(getApplicationContext(), "Что-то не так!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Что-то не так!", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             e.printStackTrace();
