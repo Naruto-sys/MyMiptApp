@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "303293569120",
+    "firebase_url": "https://mymiptapp.firebaseio.com",
+    "project_id": "mymiptapp",
+    "storage_bucket": "mymiptapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303293569120:android:62d3243e168c3308160b05",
+        "android_client_info": {
+          "package_name": "com.example.mymiptapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303293569120-gk1700lc2t10sacorf7n2t3t6vjql7gk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mymiptapp",
+            "certificate_hash": "26368db87f779ee4821cbcd5e7090c6fac43ce69"
+          }
+        },
+        {
+          "client_id": "303293569120-lp7ipulq9rh1uinvinuujskql3h4cpee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKSrG1evCLcZVGZyr9HYf5PeMOhksAXtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303293569120-lp7ipulq9rh1uinvinuujskql3h4cpee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
