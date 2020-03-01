@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toolbar_card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/my_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Жукова Мария"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_exit"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:src="?attr/actionModeCloseDrawable"
+            app:backgroundTint="@android:color/white"
+            app:fabSize="normal"
+            app:maxImageSize="24dp" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical|end"
+            app:srcCompat="@drawable/logo1"
+
+            />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/plus_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_input_add"
+            app:backgroundTint="@android:color/white"
+            app:fabSize="normal"
+            app:maxImageSize="24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/voice_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            app:backgroundTint="@android:color/white"
+            app:fabSize="normal"
+            app:maxImageSize="24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/send_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="350dp"
+            android:src="@android:drawable/ic_menu_send"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:fabSize="normal"
+            app:maxImageSize="24dp" />
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/message_1"
+        android:layout_width="218dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/message1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_card" />
+
+    <TextView
+        android:id="@+id/date1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1:48"
+        app:layout_constraintBottom_toTopOf="@+id/message_1"
+        app:layout_constraintStart_toStartOf="@+id/message_1" />
+
+    <TextView
+        android:id="@+id/message_text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi , смотри какой  дизайн"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="@+id/message_1"
+        app:layout_constraintEnd_toEndOf="@+id/message_1"
+        app:layout_constraintStart_toStartOf="@+id/message_1"
+        app:layout_constraintTop_toTopOf="@+id/message_1" />
+
+    <View
+        android:id="@+id/message_2"
+        android:layout_width="200dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/message2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_1" />
+
+    <TextView
+        android:id="@+id/message_text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Я уже давно оценила))"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/message_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="@+id/message_2"
+        app:layout_constraintTop_toTopOf="@+id/message_2"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <TextView
+        android:id="@+id/date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="1:56"
+        app:layout_constraintBottom_toTopOf="@+id/message_2"
+        app:layout_constraintStart_toStartOf="@+id/message_2" />
+
+    <View
+        android:id="@+id/message_3"
+        android:layout_width="140dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/message1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_1" />
+
+    <TextView
+        android:id="@+id/message_text_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Знаешь кто это?"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="@+id/message_3"
+        app:layout_constraintEnd_toEndOf="@+id/message_3"
+        app:layout_constraintStart_toStartOf="@+id/message_3"
+        app:layout_constraintTop_toTopOf="@+id/message_3" />
+
+    <TextView
+        android:id="@+id/date3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2:01"
+        app:layout_constraintBottom_toTopOf="@+id/message_3"
+        app:layout_constraintStart_toStartOf="@+id/message_3" />
+
+    <View
+        android:id="@+id/message_4"
+        android:layout_width="140dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="240dp"
+        android:background="@drawable/message1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_3" />
+
+    <TextView
+        android:id="@+id/message_text_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Кто дизайнер?)"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="@+id/message_4"
+        app:layout_constraintEnd_toEndOf="@+id/message_4"
+        app:layout_constraintStart_toStartOf="@+id/message_4"
+        app:layout_constraintTop_toTopOf="@+id/message_4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

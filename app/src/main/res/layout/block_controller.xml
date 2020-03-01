@@ -105,7 +105,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="128dp"
-        android:layout_marginBottom="696dp"
+        android:layout_marginBottom="784dp"
         android:gravity="center_horizontal|top"
         android:text="@string/app"
         android:textAppearance="@style/app"
