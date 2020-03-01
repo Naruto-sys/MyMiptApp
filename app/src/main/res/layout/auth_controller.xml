@@ -80,7 +80,7 @@
         android:id="@+id/textAuth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="228dp"
         android:text="@string/auth"
         android:textAppearance="@style/textAuth"
         android:textColor="@color/colorText"
